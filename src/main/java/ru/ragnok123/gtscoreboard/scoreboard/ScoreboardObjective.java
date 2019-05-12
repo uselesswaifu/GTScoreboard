@@ -32,8 +32,8 @@ public class ScoreboardObjective {
 		return this.displaySlot;
 	}
 	
-	public void registerScore(String id, String fake, int value) {
-		registerScore(id, fake, value, 0);
+	public Boolean registerScore(String id, String fake, int value) {
+		return registerScore(id, fake, value, 0);
 	}
 	
 	private Boolean registerScore(String id, String fake, int value, int type) {
