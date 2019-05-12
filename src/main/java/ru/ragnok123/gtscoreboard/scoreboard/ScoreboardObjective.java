@@ -36,15 +36,17 @@ public class ScoreboardObjective {
 		registerScore(id, fake, value, 0);
 	}
 	
-	private void registerScore(String id, String fake, int value, int type) {
+	private Boolean registerScore(String id, String fake, int value, int type) {
 		Score score = new Score(this, fake);
 		score.setScore(value);
 		score.fakeId = id;
 		score.addOrRemove = type;
 		if(!scores.containsKey(id)) {
 			scores.put(id, score);
+			return true;
 		} else {
 			Server.getInstance().getLogger().info("Score with same id is already registered!");
+			return false;
 		}
 	}
 	
